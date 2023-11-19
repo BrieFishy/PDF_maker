@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Resume{% endblock %}
+{% block body %}
+<h2>{{ user_profile.name }}</h2>
+<h3>{{ user_profile.email }}</h3>
+<h3>{{ user_profile.phone }}</h3>
+<hr>
+<br>
+<h5>Summary</h5>
+<p>{{ user_profile.summary}}</p>
+<h5>Skills</h5>
+<p>{{ user_profile.skills}}</p>
+<h5>Education</h5>
+<ul>
+    <li>{{ user_profile.school }}</li>
+    <li>{{ user_profile.university }}</li>
+</ul>
+{% endblock %}

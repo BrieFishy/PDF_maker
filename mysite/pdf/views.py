@@ -21,3 +21,8 @@ def accept(request):
                           university=university, previous_work=previous_work, skills=skills)
         profile.save()
     return render(request, 'accept.html')
+
+
+def resume (request, id):
+    user_profile = Profile.objects.get(pk=id)
+    return render(request, 'resume.html', {'user_profile':user_profile})
