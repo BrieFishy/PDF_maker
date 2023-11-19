@@ -7,12 +7,15 @@
 <hr>
 <br>
 <h5>Summary</h5>
-<p>{{ user_profile.summary}}</p>
+<p>{{ user_profile.summary }}</p>
 <h5>Skills</h5>
-<p>{{ user_profile.skills}}</p>
+<p>{{ user_profile.skills }}</p>
 <h5>Education</h5>
 <ul>
-    <li>{{ user_profile.school }}</li>
-    <li>{{ user_profile.university }}</li>
+    <li>Schooling: {{ user_profile.school }}</li>
+    <li>{{ user_profile.degree }} from {{ user_profile.university }}</li>
 </ul>
+<hr>
+<h5>Previous Work</h5>
+<p>{{ user_profile.previous_work }}</p>
 {% endblock %}

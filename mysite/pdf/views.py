@@ -26,10 +26,10 @@ def accept(request):
     return render(request, 'accept.html')
 
 
-def resume (request, id):
+def resume(request, id):
     user_profile = Profile.objects.get(pk=id)
     template = loader.get_template('resume.html')
-    html = template.render({'user_profile':user_profile})
+    html = template.render({'user_profile': user_profile})
     options = {
         'page-size': 'Letter',
         'encoding': 'UTF-8'
@@ -39,4 +39,8 @@ def resume (request, id):
     response['Content-Disposition'] = 'attachment'
     filename = "resume.pdf"
 
-    return response
+    return render(request, 'resume.html', {'user_profile': user_profile})
+
+def list(request):
+    profiles = Profile.objects.all()
+    return render(request, 'list.html', {'profiles': profiles})
